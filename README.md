@@ -1,55 +1,45 @@
-# PocketTrack — Expense Tracker
+# PocketTrack — Personal Finance Tracker
 
-A React + TypeScript app to track income and expenses. All data is saved in the
-browser's localStorage, so it stays there even after you close and reopen the page.
+PocketTrack is a responsive personal finance tracker built with **React and TypeScript**. It helps users record income and expenses and view their current financial balance directly in the browser.
 
-## Features
-- Add income or expense transactions with amount, category, and an optional note
-- See total income, total expenses, and running balance calculated live
-- Delete any transaction
-- Data persists using localStorage — no backend or database needed
-- Fully typed with TypeScript
+## 🚀 Features
 
-## Tech Stack
-- React 18
-- TypeScript
-- Vite
-- Plain CSS
-- Browser localStorage API
+- 💰 Track income and expenses
+- 📊 Display current balance
+- 📈 View total income
+- 📉 View total expenses
+- 📝 Add transaction amount and notes
+- 🏷️ Select transaction categories
+- 📋 Display transaction history
+- ⚡ Fast and responsive user interface
+- 🌐 Runs directly in the browser
 
-## Getting Started
+## 🛠️ Tech Stack
 
-```bash
-npm install
-npm run dev
-```
+- **React**
+- **TypeScript**
+- **Vite**
+- **HTML5**
+- **CSS3**
+- **JavaScript / TypeScript**
 
-Then open the printed localhost link.
+## 📂 Project Structure
 
-## Project Structure
-```
-src/
-  components/
-    BalanceSummary.tsx   # Shows income, expense, and balance totals
-    TransactionForm.tsx  # Form to add a new transaction
-    TransactionList.tsx  # Shows all transactions, newest first
-  types/
-    transaction.ts        # TypeScript types (Transaction, Category)
-  App.tsx                  # Main logic: state, localStorage sync, calculations
-  App.css                  # Styling
-  main.tsx                 # React entry point
-```
-
-## How It Works (for interview explanation)
-1. When a transaction is added, it's stored in React state (`useState`).
-2. A `useEffect` runs every time the transaction list changes, saving it to
-   `localStorage` as a JSON string.
-3. When the app first loads, another `useEffect` reads from `localStorage` and
-   restores any saved transactions.
-4. Totals (income, expense, balance) are calculated using `useMemo`, so they only
-   recalculate when the transaction list actually changes — not on every render.
-
-## Possible Next Steps
-- Add a chart showing spending by category (e.g. using Chart.js)
-- Add monthly filtering
-- Add editing an existing transaction, not just delete
+```text
+PocketTrack/
+├── src/
+│   ├── components/
+│   │   ├── BalanceSummary.tsx
+│   │   ├── TransactionForm.tsx
+│   │   └── TransactionList.tsx
+│   ├── types/
+│   │   └── transaction.ts
+│   ├── App.tsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.tsx
+├── index.html
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
